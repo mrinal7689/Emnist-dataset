@@ -1,23 +1,25 @@
-# Implementation of a Feedforward Neural Network (FNN) for MNIST Digit Classification
+# EMNIST Classification using Feedforward Neural Network (FNN)
 
 ## Overview
-This project implements a Feedforward Neural Network (FNN) for digit classification using the MNIST dataset. The model is built using TensorFlow/Keras and optimized with various hyperparameters.
+This project trains a **Feedforward Neural Network (FNN)** on the **EMNIST dataset** for handwritten character classification. The model is implemented in **PyTorch** and optimized using various optimizers and activation functions.
 
 ## Dataset
-- **Name:** MNIST  
-- **Images:** 60,000 training, 10,000 test  
-- **Size:** 28x28 pixels (grayscale)  
-- **Classes:** 10 (digits 0-9)  
+- **Name:** EMNIST (Extended MNIST)
+- **Images:** Handwritten letters and digits
+- **Size:** 28x28 pixels (grayscale)
+- **Classes:** 26 letters (A-Z) and digits (0-9) (depending on the subset used)
 
 ## Model Architecture
-- **Input:** 784 neurons (flattened 28x28 image)  
-- **Hidden Layers:** 3 layers, 128 neurons each (ReLU activation)  
-- **Output Layer:** 10 neurons (Softmax activation)  
-- **Optimizers:** Adam, SGD, RMSprop  
-- **Loss Functions:** Cross-Entropy Loss, Squared Error Loss  
+- **Input Layer:** 784 neurons (flattened 28x28 image)
+- **Hidden Layers:** Configurable, tested with different depths
+- **Activation Functions:** ReLU, Sigmoid
+- **Output Layer:** Number of neurons based on dataset class count
+- **Optimizers:** Adam, SGD, RMSProp, MGD, NGD
+- **Regularization:** L2 Regularization
+- **Evaluation Metrics:** Accuracy, Confusion Matrix, Classification Report
 
 ## Installation
-Ensure you have Python 3.x installed, then install the dependencies:
+Ensure you have Python 3.x installed, then install the required dependencies:
 
 ```bash
-pip install tensorflow numpy matplotlib scikit-learn# Emnist-dataset
+pip install torch torchvision numpy matplotlib scikit-learn emnist deeplake
